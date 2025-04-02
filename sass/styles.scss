@@ -212,7 +212,6 @@ Navigation
   a:hover {
     color: $accent-color !important;
   }
-
   a:hover, a:focus {
     color: #a0be98;
     text-decoration: none;
@@ -223,9 +222,6 @@ Navigation
     border-color: #a0be98;
   }
 }
-
-
-
 header a {
   font-size: 27px !important;
 }
@@ -479,10 +475,143 @@ header {
 ========================================================================== */
 #invitation{
   background: url('../img/fondo-seccion.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+  min-height: 100vh; /* Altura mínima = pantalla completa */
 }
 
-.row counter{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* ==========================================================================
+  Estilo de Carta de Boda
+========================================================================== */
+
+.sello-cera {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  
+  .sello-imagen {
+    width:60px;  /* Tamaño ajustable */
+    height: 60px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Sombra suave */
+    transform: rotate(-15deg); /* Inclinación casual */
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: rotate(-10deg) scale(1.1); /* Efecto al pasar el mouse */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sello-imagen {
+      width: 60px;
+      height: 60px;
+      right: 10px;
+    }
+  }
+}
+
+.carta-boda {
+  background: #f8f5f0; /* Color papel antiguo */
+  padding: 60px 0;
+  position: relative;
+  min-width:fit-content;
+}
+
+.carta-contenido {
+  background: url('../img/papel-fondo.jpg') center/cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  border: 1px solid #e0d6c2;
+
+  max-width: 600px; /* Ancho máximo reducido (ajusta según necesidad) */
+  width: 90%; /* Ocupa el 85% del contenedor padre */
+  margin: 10px auto; /* Centrado con espacio exterior */
+  padding: 20px; /* Espacio interno reducible */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+
+  /* Efecto de doblez en esquina */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, transparent 50%, #f8f5f0 50%);
+  }
+}
+
+.carta-header {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  
+  h2 {
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-family: "Tangerine";
+    font-size: 60px;
+    color: #d4af37; /* Dorado */
+    margin: 0;
+    line-height: 1;
+    font-size: clamp(36px, 6vw, 48px);
+  }
+}
+
+.carta-fecha {
+  margin: 30px 0;
+  
+  .mes {
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #777;
+  }
+  
+  .dia {
+    font-family: "Merriweather", serif;
+    font-size: 80px;
+    color: #333;
+    line-height: 1;
+    display: block;
+    font-size: clamp(50px, 8vw, 60px);
+  }
+  
+  .anio {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    color: #777;
+  }
+}
+
+.carta-footer {
+  margin-top: 40px;
+  
+  .lugar {
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .direccion {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+  }
 }
 
 /* ==========================================================================
@@ -627,6 +756,7 @@ Features-stack
 .events
 ========================================================================== */
 .events {
+
   .leftcol {
     padding-right: 100px;
     border-right: solid 1px $keyline-color;
