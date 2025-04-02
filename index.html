@@ -8,9 +8,17 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Ram & Antara getting hitched!</title>
+    <title>Manuel & Lizbeth van a casarse!</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
@@ -79,7 +87,7 @@
                         <ul class="primary-nav">
                             <li><a href="#events">Itinerario</a></li>
                             <li><a href="#instagram">Instagram</a></li>
-                            <li><a href="#eng-pics">Compromiso</a></li>
+                            <li><a href="#eng-pics">Galería</a></li>
                             <li class="hidden-sm hidden-xs"><a href="#video-bg">Un vistazo del lugar</a></li>
                         </ul>
                         <ul class="member-actions">
@@ -94,6 +102,7 @@
             </div>
         </header>
     </section>
+    <div class="destellos-aleatorios"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -115,44 +124,15 @@
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
+
 <section id="invitation" class="section-padding">
     <div class="container">
-        <div class="row">
+        <div class="row counter">
             <div class="col-md-12 text-center">
-                <h3>Nos vamos a casar</h3>
-                <p>El día 04 de mayo del 2025, y queremos que seas parte de ello.</p>
-                <div class="share-bar"></div>
+                <!-- Elfsight Countdown Timer | Untitled Countdown Timer -->
+                <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                <div class="elfsight-app-2c54194b-a9ce-44de-bbb2-00e4a3696a94" data-elfsight-app-lazy></div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">Cómo nos conocimos</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
-            <div class="col-md-6">
-                <p>
-                    TEXTO LARGO SOBRE COMO SE CONOCIERON:
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tellus eros, 
-                    feugiat vitae augue eget, scelerisque porttitor ipsum. Nunc et tortor fringilla, 
-                    vulputate odio vitae, blandit lectus. Vivamus sodales, nunc et consectetur maximus, 
-                    turpis ipsum suscipit neque, facilisis rhoncus arcu ipsum in magna. Nam scelerisque, 
-                    risus sit amet mollis dictum, nulla tellus placerat justo, sit amet vehicula enim neque ac nisl. 
-                    Sed lobortis, augue nec condimentum placerat, risus erat molestie justo, ac viverra purus justo sed elit.
-                </p>
-            </div>
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.jpg" class="wp8"></div>
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.jpg" class="wp9"></div>
         </div>
     </div>
 </section>
@@ -527,6 +507,45 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+</script>
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.destellos-aleatorios');
+  const numDestellos = 5; // Número de destellos
+
+  // Crea destellos iniciales
+  for (let i = 0; i < numDestellos; i++) {
+    crearDestello();
+  }
+
+  // Función para generar destellos
+  function crearDestello() {
+    const destello = document.createElement('div');
+    destello.className = 'destello';
+    
+    // Posición aleatoria
+    destello.style.left = `${Math.random() * 100}%`;
+    destello.style.top = `${Math.random() * 100}%`;
+    
+    // Tamaño aleatorio
+    const size = 80 + Math.random() * 100;
+    destello.style.width = `${size}px`;
+    destello.style.height = `${size}px`;
+    
+    // Animación única
+    destello.style.animationDelay = `${Math.random() * 5}s`;
+    destello.style.animationDuration = `${3 + Math.random() * 4}s`;
+    
+    container.appendChild(destello);
+
+    // Mueve el destello a nueva posición al finalizar la animación
+    destello.addEventListener('animationiteration', () => {
+      destello.style.left = `${Math.random() * 100}%`;
+      destello.style.top = `${Math.random() * 100}%`;
+    });
+  }
+});
 </script>
 </body>
 </html>

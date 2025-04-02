@@ -14,6 +14,9 @@
 /* ==========================================================================
 Global Styles
 ========================================================================== */
+
+$accent-color: #a0be98;
+
 .group:after {
   content: "";
   display: table;
@@ -209,9 +212,20 @@ Navigation
   a:hover {
     color: $accent-color !important;
   }
+
+  a:hover, a:focus {
+    color: #a0be98;
+    text-decoration: none;
 }
 
-/* Ajusta el tamaño de fuente si es necesario */
+  .btn-white:hover, .btn-white:focus {
+    color: #a0be98;
+    border-color: #a0be98;
+  }
+}
+
+
+
 header a {
   font-size: 27px !important;
 }
@@ -294,17 +308,34 @@ Hero
 .hero {
   min-height: 750px;
   background: url('../img/hero-min.jpg') center center;
+  background-color: rgba(0, 0, 0, 0.4); 
+  background-blend-mode: darken;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
+  .rsvp-btn {
+    font-family: "Tangerine";
+    font-size: 22px;
+    text-transform: none !important;
+    letter-spacing: 0.5px !important;
+  
+  }
+
+  .btn {
+    background: transparent !important;
+    border: 2px solid white !important; 
+    color: white !important; 
+  
+    &:hover {
+      background: rgb(163, 196, 163) !important;
+      border: rgba(163, 196, 163, 6) !important;
+      color: white !important;
+    }
+  }
+
   .down-arrow a {
     color: $txt-light;
   }
@@ -334,7 +365,8 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(0, 25, 0, 0.4); 
+  background-blend-mode: darken;
   z-index: 999;
   width: 100%;
 }
@@ -358,7 +390,7 @@ header {
     display: inline-block;
   }
   .logo img {
-    height: 19px;
+    height: 40px;
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
@@ -413,41 +445,44 @@ header {
 }
 
 /* ==========================================================================
-Social share buttons
+  Destellos Aleatorios
 ========================================================================== */
-.share-bar {
-  margin-top: 20px;
+.destellos-aleatorios {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.destello {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0;
+  animation: destello-fade 4s infinite;
+}
+
+@keyframes destello-fade {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.7; transform: scale(1); }
 }
 
 /* ==========================================================================
-Intro
+ NVAC
 ========================================================================== */
-.intro span.icon {
-  font-size: 40px;
-  color: $accent-color;
-  font-weight: bold;
-}
-.intro-icon {
-  display: inline-block;
-  vertical-align: top;
-  padding: 6px 0 0 0;
-  margin-right: 20px;
-  width: 40px;
-}
-.intro-content {
-  display: inline-block;
-  width: 80%;
+#invitation{
+  background: url('../img/fondo-seccion.jpg');
 }
 
-#intro {
-  padding-top: 40px;
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-#intro p {
-  text-align: center;
+.row counter{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================================================
