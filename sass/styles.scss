@@ -613,6 +613,176 @@ header {
 }
 
 /* ==========================================================================
+  Sección Padres - Estilo Minimalista
+========================================================================== */
+
+#padres {
+  background-color: #FAF5F1;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.titulo-elegante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  h2 {
+    font-family: "Tangerine", cursive;
+    font-size: 6.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 30px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    
+    .highlight {
+      color: #d4af37;
+      position: relative;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #d4af37;
+        opacity: 0.3;
+      }
+    }
+  }
+  
+  .decoracion-linea {
+    flex: 1;
+    max-width: 150px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+    
+    &.izquierda {
+      margin-right: 20px;
+    }
+    
+    &.derecha {
+      margin-left: 20px;
+    }
+  }
+}
+
+.familias-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.familia {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  
+  h3 {
+    font-family: "Merriweather", serif;
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 1px;
+      background: #d4af37;
+    }
+  }
+}
+
+.padres-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.padre {
+  text-align: center;
+  
+  h4 {
+    font-family: "Merriweather", serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: #d4af37;
+    }
+  }
+  
+  .parentesco {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-elegante {
+    flex-direction: column;
+    
+    h2 {
+      font-size: 3.5rem;
+      margin: 20px 0;
+    }
+    
+    .decoracion-linea {
+      width: 100px;
+      
+      &.izquierda, &.derecha {
+        margin: 10px 0;
+      }
+    }
+  }
+  
+  .familias-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .separador-corazon {
+    padding: 20px 0;
+    transform: rotate(90deg);
+  }
+}
+/* ==========================================================================
 Features-stack
 ========================================================================== */
 .features {
@@ -771,6 +941,160 @@ Features-stack
   }
 }
 
+
+/* ==========================================================================
+  Sección Instagram con iPhone Mockup
+========================================================================== */
+
+#instagram {
+  background-color: #FAF5F1;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.titulo-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  h2 {
+    font-family: "Tangerine", cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 20px;
+    line-height: 1.2;
+  }
+  
+  .decoracion-linea {
+    flex: 1;
+    max-width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.subtitulo-instagram {
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.hashtag-oro {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 5px 15px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+}
+
+.iphone-mockup-container {
+  position: relative;
+  margin: 30px auto;
+  max-width: 350px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-radius: 40px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    
+    .instagram-hover-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.iphone-mockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
+.instagram-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 175, 55, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 40px;
+  
+  i {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    color: white;
+    font-family: "Merriweather", serif;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+
+.btn-ver-mas {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #d4af37;
+  padding: 8px 25px;
+  border: 1px solid #d4af37;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  
+  &:hover {
+    background-color: #d4af37;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-instagram {
+    flex-direction: column;
+    
+    h2 {
+      font-size: 3rem;
+      margin: 10px 0;
+    }
+    
+    .decoracion-linea {
+      width: 80px;
+      margin: 10px 0;
+    }
+  }
+  
+  .iphone-mockup-container {
+    max-width: 280px;
+  }
+}
+
 /* ==========================================================================
 .blog
 ========================================================================== */
@@ -847,19 +1171,14 @@ Features-stack
   }
 }
 
-/* ==========================================================================
-Instagram
-========================================================================== */
-#instagram {
-  img {
-    width: 100%;
-  }
-}
+
+
 
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
 #eng-pics {
+  background-color: #FAF5F1;
   img {
     width: 100%;
     height: auto;
@@ -922,6 +1241,73 @@ Engagement Pics
     left: 34%;
     top: 75%;
     z-index: -1;
+  }
+}
+
+/* ==========================================================================
+  Estilo de Itinerario
+========================================================================== */
+
+#itinerario {
+  background: url('../img/fondo-seccion.jpg') center/cover; // Mismo que carta-boda
+  padding: 60px 0;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.itinerario-detalle {
+  margin: 40px 0;
+  text-align: center;
+  
+}
+
+.evento {
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 25px;
+  
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.hora {
+  font-family: "Merriweather", serif;
+  font-size: 24px;
+  color: #d4af37;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.actividad {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hora {
+    font-size: 20px;
+  }
+  
+  .actividad {
+    font-size: 16px;
   }
 }
 
