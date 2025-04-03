@@ -1311,6 +1311,266 @@ Engagement Pics
   }
 }
 
+
+/* ==========================================================================
+  Sección Código de Vestimenta
+========================================================================== */
+
+#dresscode {
+background-color: #FAF5F1;;
+  position: relative;
+
+  /* Añade esto a tu SCSS existente */
+.img-dresscode {
+  max-width: 100%;
+  height: 100px;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.dresscode-container {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.titulo-dresscode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  
+  h2 {
+    font-family: "Tangerine", cursive;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 20px;
+  }
+  
+  .decoracion-linea {
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.dresscode-content {
+  margin: 30px 0;
+}
+
+.dresscode-tag {
+  font-family: "Merriweather", serif;
+  font-size: 1.8rem;
+  color: #d4af37;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.dresscode-nota {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  
+  i {
+    color: #d4af37;
+    margin-right: 5px;
+  }
+}
+
+.nota-resaltada {
+  color: #d4af37;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.dresscode-ninos {
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  color: #666;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  margin-top: 20px;
+}
+
+.cita-biblica-dresscode {
+  
+  p {
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .versiculo {
+    color: #d4af37;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-dresscode {
+    flex-direction: column;
+    
+    h2 {
+      font-size: 2.8rem;
+      margin: 10px 0;
+    }
+    
+    .decoracion-linea {
+      width: 60px;
+      margin: 10px 0;
+    }
+  }
+  
+  .dresscode-container {
+    padding: 30px 20px;
+  }
+}
+
+/* ==========================================================================
+  Sección Sugerencias de Regalo
+========================================================================== */
+
+#regalos {
+  background-color: #FAF5F1;
+  position: relative;
+  padding: 60px 0;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.icono-regalo {
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.titulo-regalo {
+  font-family: "Tangerine", cursive;
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.mensaje-regalo {
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opciones-regalo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.opcion-regalo {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  
+  h3 {
+    font-family: "Merriweather", serif;
+    font-size: 1.3rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+    
+    i {
+      margin-right: 10px;
+    }
+  }
+  
+  p {
+    font-family: "Open Sans", sans-serif;
+    color: #666;
+    margin-bottom: 15px;
+  }
+}
+
+.datos-cuenta {
+  p {
+    margin-bottom: 8px;
+    
+    strong {
+      color: #333;
+      font-weight: 600;
+    }
+  }
+}
+
+.separador-opciones {
+  display: flex;
+  align-items: center;
+  font-family: "Tangerine", cursive;
+  font-size: 2rem;
+  color: #d4af37;
+  margin: 0 10px;
+}
+
+.btn-ver-regalos {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 25px;
+  background-color: #d4af37;
+  color: white;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken(#d4af37, 10%);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
 /* ==========================================================================
 Embed video
 ========================================================================== */
