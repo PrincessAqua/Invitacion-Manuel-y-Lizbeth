@@ -254,6 +254,7 @@ function initMap() {
     });
 }
 
+/*
 function initBBSRMap() {
     var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -266,7 +267,7 @@ function initBBSRMap() {
         position: la_fiesta,
         map: map
     });
-}
+}*/
 
 // alert_markup
 function alert_markup(alert_type, msg) {

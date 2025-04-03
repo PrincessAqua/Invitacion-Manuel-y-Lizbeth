@@ -1598,9 +1598,10 @@ Embed video
 /* ==========================================================================
 Google map
 ========================================================================== */
-#map-canvas {
-  height: 500px;
-  width: 100%;
+#map-canvas{
+  height: 250px;
+  width: 95%;
+  margin: 0 auto;
 }
 #map-content-wrapper {
   position: relative;
@@ -1631,6 +1632,147 @@ Google map
 }
 .pointer-events-auto {
   pointer-events: auto;
+}
+
+/* ==========================================================================
+  Sección Ubicaciones
+========================================================================== */
+
+#ubicaciones {
+
+.titulo-elegante h2{
+  font-size: 3.5rem !important;
+}
+  background-color: #FAF5F1;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.ubicaciones-container {
+  margin-top: 50px;
+}
+
+.ubicacion-card {
+  padding: 15px;
+}
+
+.ubicacion-content {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+}
+
+.ubicacion-titulo {
+  font-family: "Merriweather", serif;
+  font-size:1.5rem;
+  color: #d4af37;
+  text-align: center;
+  padding: 20px 0 10px;
+  margin: 0;
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background: #d4af37;
+  }
+}
+
+.ubicacion-lugar {
+  font-family: "Merriweather", serif;
+  font-size: 1.3rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mapa-ubicacion {
+  height: 250px;
+  width: 100%;
+  background: #f5f5f5;
+}
+
+.ubicacion-info {
+  padding: 20px;
+  text-align: center;
+  
+  p {
+    font-family: "Open Sans", sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+    padding-bottom: 0px !important;
+    
+    i {
+      color: #d4af37;
+      margin-right: 8px;
+      width: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.btn-ubicacion {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 25px;
+  background-color: #d4af37;
+  color: white;
+  border-radius: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  
+  &:hover {
+    background-color: darken(#d4af37, 10%);
+    color: white;
+    text-decoration: none;
+  }
+  
+  i {
+    margin-right: 5px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ubicacion-card {
+    margin-bottom: 30px;
+  }
+  
+  .ubicacion-titulo {
+    font-size: 2.5rem;
+  }
+  
+  .ubicacion-lugar {
+    font-size: 1.1rem;
+  }
+  
+  .mapa-ubicacion {
+    height: 200px;
+  }
 }
 
 /* ==========================================================================
