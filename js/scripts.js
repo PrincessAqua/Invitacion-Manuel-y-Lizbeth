@@ -1,5 +1,43 @@
 $(document).ready(function () {
 
+
+// Elementos del reproductor
+var audioPlayer = document.getElementById('audio-player');
+var playBtn = document.getElementById('play-btn');
+
+// Función para toggle play/pause
+function togglePlay() {
+    if (audioPlayer.paused) {
+        var playPromise = audioPlayer.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(function(error) {
+                console.log("Autoplay bloqueado:", error);
+                playBtn.innerHTML = '▶<span class="tooltip">Click para iniciar</span>';
+            });
+        }
+        playBtn.classList.add('playing');
+    } else {
+        audioPlayer.pause();
+        playBtn.classList.remove('playing');
+    }
+}
+
+// Event listener
+playBtn.addEventListener('click', togglePlay);
+
+// Configuración inicial
+audioPlayer.volume = 0.3;
+
+// Iniciar después de interacción (para móviles)
+function initAudioOnInteraction() {
+    togglePlay();
+    document.body.removeEventListener('click', initAudioOnInteraction);
+    document.body.removeEventListener('touchstart', initAudioOnInteraction);
+}
+
+document.body.addEventListener('click', initAudioOnInteraction, { once: true });
+document.body.addEventListener('touchstart', initAudioOnInteraction, { once: true });
+
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {

@@ -15,6 +15,80 @@
 Global Styles
 ========================================================================== */
 
+.mini-player {
+  display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10%;
+  
+  .mini-play-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-size: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      margin: 0 auto;   // Centra el botón dentro de su contenedor
+      
+      &:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.05);
+      }
+      
+      span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 12px;
+          line-height: 1;
+      }
+      
+      .pause-icon {
+          opacity: 0;
+      }
+  }
+  
+  &.playing {
+      .play-icon {
+          opacity: 0;
+      }
+      .pause-icon {
+          opacity: 1;
+      }
+  }
+}
+
+/* Estilos para los iconos */
+.mini-play-btn .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.mini-play-btn .fa-pause {
+  opacity: 0;
+}
+
+.mini-player.playing .fa-play {
+  opacity: 0;
+}
+
+.mini-player.playing .fa-pause {
+  opacity: 1;
+}
+
+
 $accent-color: #D4AF37;
 
 .group:after {

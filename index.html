@@ -71,6 +71,11 @@
 </head>
 <body id="top">
 
+<!-- Resto del contenido de tu página -->
+<div class="content">
+    <!-- Tu contenido aquí -->
+</div>
+
 <section class="hero">
     <section class="navigation">
         <header>
@@ -102,9 +107,20 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
                     <img src="img/logo-lg.png">
-
                 </div>
+                <div class="mini-player">
+                  <audio id="audio-player" loop>
+                      <source src="./milliontone.mp3" type="audio/mpeg">
+                  </audio>
+                  <button id="play-btn" class="mini-play-btn" aria-label="Reproducir música">
+                    <i class="fa fa-play play-icon"></i>
+                    <i class="fa fa-pause pause-icon"></i>
+                  </button>
+              </div>
             </div>
+
+            
+
         </div>
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
@@ -203,7 +219,7 @@
             <span class="decoracion-linea derecha"></span>
           </div>
           <p class="subtitulo-instagram">Ayúdanos a capturar momentos especiales</p>
-          <div class="hashtag-oro">#mylsocios</div>
+          <div class="hashtag-oro">#mylamorbonito</div>
         </div>
       </div>
       
@@ -220,7 +236,7 @@
       </div>
       
       <div class="text-center ver-mas-cont">
-        <a href="https://instagram.com/explore/tags/mylsocios" target="_blank" class="btn-ver-mas">Ver más en Instagram</a>
+        <a href="https://instagram.com/explore/tags/#mylamorbonito" target="_blank" class="btn-ver-mas">Ver más en Instagram</a>
       </div>
     </div>
   </section>
@@ -341,7 +357,7 @@
               
               <div class="evento">
                 <div class="hora">8:00 PM</div>
-                <div class="actividad">BAILE</div>
+                <div class="actividad">¡TODOS A BAILAR!</div>
               </div>
               
               <div class="evento">
@@ -468,49 +484,6 @@
   </div>
 </section>
 
-<!--
-<section id="map" class="section-padding">
-    <div class="text-center">
-        <h3>¿cómo llego hasta ahí?</h3>
-        <p>Es más fácil de lo que imaginas!</p>
-    </div>
-    <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Hotel Royal Villas Resort </h5>
-                            <p>Av Camarón Sábalo 500-B, Zona Dorada, 82110 Mazatlán, Sin.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Agente de banquetes</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+52 6699166173</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+52 6699832221</a></p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-md-6" style="padding: 5px;">
-                            <a class="btn btn-fill btn-small"
-                               href="https://m.uber.com/ul/?action=setPickup&client_id=Yh7Dl6SjB56RY2JuuZF8ttVa6ryFV78W&pickup=my_location&dropoff[formatted_address]=Fortune%20Park%20Panchwati%20-%20Hotels%20in%20Kolkata%2C%20Howrah%2C%20West%20Bengal%2C%20India&dropoff[latitude]=22.593276&dropoff[longitude]=88.270277"><i
-                                    class="fa fa-taxi"></i>&nbsp;&nbsp;Pedir Uber</a>
-                        </div>
-                        <div class="col-md-6" style="padding: 5px;">
-                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
--->
-
 <section class="rsvp text-center" id="rsvp">
 
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
@@ -533,7 +506,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>¿Qué estás esperando?</h3>
-                <p>Te agradeceríamos confirmar tu asistencia antes del 01 de Mayo.</p>
+                <p>Te agradeceríamos confirmar tu asistencia antes del 15 de Abril.</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
