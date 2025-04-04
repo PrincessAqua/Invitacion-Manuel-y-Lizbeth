@@ -38,6 +38,42 @@ function initAudioOnInteraction() {
 document.body.addEventListener('click', initAudioOnInteraction, { once: true });
 document.body.addEventListener('touchstart', initAudioOnInteraction, { once: true });
 
+
+
+// Countdown Timer
+function updateCountdown() {
+    var weddingDate = new Date('May 04, 2025 18:00:00').getTime();
+    var now = new Date().getTime();
+    var distance = weddingDate - now;
+
+    // Calcula días, horas, minutos y segundos
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Muestra el resultado
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+    // Si la cuenta regresiva termina
+    if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+    }
+}
+
+// Actualiza el contador cada segundo
+var countdownTimer = setInterval(updateCountdown, 1000);
+
+// Ejecuta inmediatamente para evitar retraso inicial
+updateCountdown();
+
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {

@@ -848,6 +848,104 @@ header {
     align-items: center;
   }
 }
+
+/* ==========================================================================
+  Sección Countdown Timer
+========================================================================== */
+#countdown {
+  background-color: #FAF5F1;
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  text-align: center;
+  margin: 0 10px;
+  min-width: 80px;
+}
+
+.countdown-number {
+  font-family: "Merriweather", serif;
+  font-size: 3.5rem;
+  color: #d4af37;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.countdown-label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-separator {
+  font-family: "Merriweather", serif;
+  font-size: 3rem;
+  color: #d4af37;
+  margin: 0 5px;
+  line-height: 1;
+  align-self: flex-end;
+  padding-bottom: 20px;
+}
+
+.countdown-message {
+  margin-top: 30px;
+  
+  p {
+    font-family: "Tangerine", cursive;
+    font-size: 2.5rem;
+    color: #555;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .countdown-item {
+    min-width: 60px;
+    margin: 0 5px;
+  }
+  
+  .countdown-number {
+    font-size: 2.5rem;
+  }
+  
+  .countdown-separator {
+    font-size: 2rem;
+    padding-bottom: 15px;
+  }
+  
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+  
+  .countdown-message p {
+    font-size: 2rem;
+  }
+}
+
+
 /* ==========================================================================
 Features-stack
 ========================================================================== */
